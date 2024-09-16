@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Player Page</title>
+    <link href="https://vjs.zencdn.net/8.16.1/video-js.css" rel="stylesheet" />
+
+  <!-- If you'd like to support IE8 (for Video.js versions prior to v7) -->
+  <!-- <script src="https://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script> -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        .container {
+            text-align: center;
+            background: white;
+            padding: 2em;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border-radius: 10px;
+        }
+        h1 {
+            color: #333;
+        }
+        video {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            margin-top: 1em;
+        }
+        .video-list {
+            margin-top: 1em;
+            list-style: none;
+            padding: 0;
+        }
+        .video-list li {
+            margin: 0.5em 0;
+        }
+        .video-list button {
+            background: none;
+            border: none;
+            color: #007BFF;
+            cursor: pointer;
+            font-size: 1em;
+            padding: 0;
+        }
+        .video-list button:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+  <script src="https://vjs.zencdn.net/8.16.1/video.min.js"></script>
+
+    <div class="container">
+        <h1>Welcome to Our Video Player！</h1>
+            <video
+                id="my-video"
+                class="video-js"
+                controls
+                preload="auto"
+                width="640"
+                height="360"
+                data-setup="{}"
+            >
+                <source src="videos/test.mp4" type="video/mp4" />
+                <p class="vjs-no-js">
+                To view this video please enable JavaScript, and consider upgrading to a
+                web browser that
+                <a href="https://videojs.com/html5-video-support/" target="_blank"
+                    >supports HTML5 video</a
+                >
+                </p>
+            </video>
+
+  <script src="https://vjs.zencdn.net/8.16.1/video.min.js"></script>
+    </div>
+
+    <script>
+        function playVideo(src) {
+            var player = document.getElementById('player');
+            var videoSource = document.getElementById('videoSource');
+            videoSource.src = src;
+            player.load();
+            player.play();
+        }
+    </script>
+</body>
+</html>
